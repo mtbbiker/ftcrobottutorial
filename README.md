@@ -1,17 +1,17 @@
-# ftcrobottutorial
+# FTC Java introduction tutorial
 This is a simple Java project to help explain some programming concepts for help with FTC software
 
-##Intendent Audience
+## Intended Audience
 
 Learners starting a FTC project and starting to learn about Java programming
 
-##Contribute
+## Contribute
 
 Please feel free to add and improve to this project to teach new Learners about Java programming and how it fits into an FTC Robot
 
-##Before you start (We assume you have downloaded and installed ```git```, ```JDK1.8``` and ```netbeans 8.2 or later```)
+## Before you start (We assume you have downloaded and installed ```git```, ```JDK1.8``` and ```netbeans 8.2 or later```)
 
-###Steps to get the project on your computer
+### Steps to get the project on your computer
 
 1. Go to ```https://github.com``` and create an Account.
 2. Browse to the Project ```https://github.com/mtbbiker/ftcrobottutorial``` and ```Fork``` your own copy
