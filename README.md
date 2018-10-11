@@ -19,7 +19,7 @@ Please feel free to add and improve to this project to teach new Learners about 
 4. If you use a Terminal ```(git alread installed)``` Type ```$ git clone https://github.com/yourusername/ftcrobottutorial.git```
 5. Once the project is cloned, Open Netbeans and Open the project. 
 
-###Software Development Concepts
+### Software Development Concepts
 
 The following ideas are discussed in a class to create a basic background and create some understanding of how it all fits together
 
