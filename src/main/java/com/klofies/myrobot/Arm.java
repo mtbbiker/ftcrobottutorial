@@ -9,6 +9,11 @@ package com.klofies.myrobot;
  *
  * @author eugene
  */
-public class Arm {
+public class Arm implements Runnable{
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

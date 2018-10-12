@@ -5,6 +5,9 @@
  */
 package com.klofies.controller;
 
+import com.klofies.playground.PlayGround;
+
+
 /**
  *
  * @author eugene
@@ -33,8 +36,15 @@ public class ControllerConsole extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btnStart = new javax.swing.JButton();
+        txtSliderValue = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        sldrLeft.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sldrLeftStateChanged(evt);
+            }
+        });
 
         sldrForward.setOrientation(javax.swing.JSlider.VERTICAL);
 
@@ -64,6 +74,9 @@ public class ControllerConsole extends javax.swing.JFrame {
             }
         });
 
+        txtSliderValue.setFont(new java.awt.Font("Droid Sans", 0, 24)); // NOI18N
+        txtSliderValue.setText("50");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,7 +95,10 @@ public class ControllerConsole extends javax.swing.JFrame {
                         .addComponent(sldrLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(btnStart)))
+                        .addComponent(btnStart))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(txtSliderValue, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(sldrForward, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(108, 108, 108))
@@ -95,15 +111,16 @@ public class ControllerConsole extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSteer)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(sldrForward, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(23, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
+                        .addComponent(txtSliderValue, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(sldrLeft, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(52, 52, 52)
                         .addComponent(btnStart)
                         .addGap(50, 50, 50))))
         );
@@ -114,7 +131,17 @@ public class ControllerConsole extends javax.swing.JFrame {
     private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
         // TODO add your handling code here:
         //Start the Robot
+//       com.klofies.playground.PlayGround play = new PlayGround();
+//               
+//       play.setVisible(true);
     }//GEN-LAST:event_btnStartActionPerformed
+
+    private void sldrLeftStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sldrLeftStateChanged
+        // TODO add your handling code here:
+        System.err.println("Hello: " + sldrLeft.getValue());
+        
+        txtSliderValue.setText(String.valueOf(sldrLeft.getValue()));
+    }//GEN-LAST:event_sldrLeftStateChanged
 
     /**
      * @param args the command line arguments
@@ -149,6 +176,15 @@ public class ControllerConsole extends javax.swing.JFrame {
                 new ControllerConsole().setVisible(true);
             }
         });
+        
+        com.klofies.playground.PlayGround play = new PlayGround();
+        play.setVisible(true);
+        
+        Thread thread = new Thread(play);
+        thread.start();
+                       
+        
+       
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -158,5 +194,6 @@ public class ControllerConsole extends javax.swing.JFrame {
     private javax.swing.JLabel lblSteer;
     private javax.swing.JSlider sldrForward;
     private javax.swing.JSlider sldrLeft;
+    private javax.swing.JTextField txtSliderValue;
     // End of variables declaration//GEN-END:variables
 }
