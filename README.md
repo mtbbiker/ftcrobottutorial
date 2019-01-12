@@ -3,7 +3,7 @@ This is a simple Java project to help explain some programming concepts for help
 
 ## Intended Audience
 
-Learners starting a FTC project and starting to learn about Java programming
+Learners starting a FTC project and starting to learn about Java programming.
 
 ## Contribute
 
